@@ -1,15 +1,11 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
   content: [
-    "./index.html",                // Asegúrate de incluir el archivo HTML principal
-    "./src/**/*.{js,ts,jsx,tsx}",   // Asegura que Tailwind procese todos los archivos de React
+    "./src/**/*.{js,jsx,ts,tsx}", 
+    "./index.html",
   ],
   theme: {
-    extend: {
-      colors: {
-        'custom-orange': '#FF7212',  // Definir el color personalizado aquí
-      },
-    },
+    extend: {},
   },
   plugins: [],
-}
+};

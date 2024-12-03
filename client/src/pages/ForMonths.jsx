@@ -1,7 +1,6 @@
 // src/pages/ForMonths.jsx
 
 import React from 'react';
-import Footer from '../components/Footer';  
 import logo from '../assets/logo.png';  
 import fondo2 from '../assets/fondo2.png';  
 

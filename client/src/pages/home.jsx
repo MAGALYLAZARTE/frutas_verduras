@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from '../assets/logo.png';
 import fondo2 from '../assets/fondo2.png';
+import Login from '../component/Login';
 // import Footer from '../components/Footer'; // Importa el Footer
 
 function Home() {
@@ -35,13 +36,13 @@ function Home() {
         </div>
         <div className="w-full md:w-1/2 mt-8 md:mt-0">
           <img
-          src="/vegetales.png" // Ajusta esta ruta según tu estructura
+          src="/vegetales.png" 
             alt="vegetales"
             className="w-full h-auto rounded-lg"
           />
         </div>
       </section>
-
+      <Login /> {/* Aquí llamas al componente Login */}
       {/* <Footer /> */}
     </div>
   );

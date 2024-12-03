@@ -6,9 +6,9 @@ import Footer from './components/Footer';  // Importa el Footer
 function App() {
   return (
     <div className="App">
-      <Home />
+      {/* <Home />
       <Signup />
-      <Footer /> {/* Incluye el Footer al final */}
+      <Footer /> Incluye el Footer al final */}
     </div>
   );
 }
