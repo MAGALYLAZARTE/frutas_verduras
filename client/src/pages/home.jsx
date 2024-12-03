@@ -19,11 +19,7 @@ function Home() {
         <img src={logo} alt="Logo" className="w-2 h-auto" />
       </header>
 
-      <section className="flex justify-center mt-10">
-        <button className="px-6 py-3 bg-pink-200 text-white font-semibold rounded-full shadow-md hover:bg-blue-500 transition duration-300">
-          Iniciar sesión
-        </button>
-      </section>
+      
 
       <section className="flex flex-col md:flex-row justify-between items-center p-10 bg-white bg-opacity-50 mt-10 mx-5 md:mx-10 rounded-lg shadow-lg">
         <div className="w-full md:w-1/2">
@@ -41,6 +37,13 @@ function Home() {
             className="w-full h-auto rounded-lg"
           />
         </div>
+
+        <section className="flex justify-center mt-10">
+        <button className="px-6 py-3 bg-pink-200 text-white font-semibold rounded-full shadow-md hover:bg-blue-500 transition duration-300">
+          Iniciar sesión
+        </button>
+      </section>
+      
       </section>
       <Login /> {/* Aquí llamas al componente Login */}
       {/* <Footer /> */}

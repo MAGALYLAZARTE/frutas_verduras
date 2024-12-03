@@ -23,7 +23,6 @@ function ForMonths() {
           Aquí irán las frutas y verduras de cada mes que cargarás desde la base de datos.
         </h1>
       </div>
-      <Footer />
     </div>
   );
 }
