@@ -101,7 +101,7 @@ const Login = () => {
         </form>
 
         {/* Enlace de registro */}
-        <p className="mt-4 text-center text-[#76A52A] text-lg">
+        <p className="mt-4 text-center text-green-700 text-lg">
           ¿Eres nuevo aquí?{" "}
           <a href="#" className="underline">
             Regístrate

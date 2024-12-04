@@ -15,7 +15,7 @@ function Months() {
         <img
           src={logo}
           alt="Logo"
-          className="w-40 h-auto mb-8"
+          className="w-80 h-auto mb-8"
         />
       </header>
 

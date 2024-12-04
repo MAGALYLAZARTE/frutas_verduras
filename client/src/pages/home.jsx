@@ -16,7 +16,7 @@ function Home() {
       }}
     >
       <header className="flex justify-center p-4 bg-transparent">
-        <img src={logo} alt="Logo" className="w-2 h-auto" />
+        <img src={logo} alt="Logo" className="w-80 h-auto" />
       </header>
 
       
@@ -39,14 +39,14 @@ function Home() {
         </div>
 
         <section className="flex justify-center mt-10">
-        <button className="px-6 py-3 bg-pink-200 text-white font-semibold rounded-full shadow-md hover:bg-blue-500 transition duration-300">
+        <button className="px-6 py-3 bg-orange-500 text-white font-semibold rounded-full shadow-md hover:bg-orange-200 transition duration-300">
           Iniciar sesión
         </button>
       </section>
       
       </section>
-      <Login /> {/* Aquí llamas al componente Login */}
-      {/* <Footer /> */}
+      <Login /> 
+    
     </div>
   );
 }

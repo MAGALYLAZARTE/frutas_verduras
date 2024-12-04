@@ -10,12 +10,9 @@ function ForMonths() {
       className="bg-cover bg-center h-screen flex flex-col justify-between"
       style={{ backgroundImage: `url(${fondo2})` }}  
     >
-       <header className="flex justify-center p-6">
-        <img
-          src={logo}
-          alt="Logo"
-          className="w-40 h-auto mb-8"
-        />
+          {/* Logo */}
+      <header className="flex justify-center p-4 bg-transparent">
+        <img src={logo} alt="Logo" className="w-80 h-auto" />
       </header>
 
       <div className="flex-grow flex items-center justify-center">

@@ -1,28 +1,29 @@
 import React, { useState } from 'react';
-// import Footer from '../components/Footer'; 
-import fondo2 from '../assets/fondo2.png';  
+import fondo2 from '../assets/fondo2.png';
+import logo from '../assets/logo.png'; 
 
 function Signup() {
-  // Estados para los campos del formulario
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  // Función para manejar el envío del formulario
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Registrando usuario:', { name, email, password });
   };
 
-
-  
   return (
     <div
-      className="bg-cover bg-center h-screen flex flex-col items-center justify-between"
-      style={{ backgroundImage: `url(${fondo2})` }}  // Fondo de la página
+      className="bg-cover bg-center h-screen flex flex-col items-center justify-start" 
+      style={{ backgroundImage: `url(${fondo2})` }}
     >
+      {/* Logo */}
+      <header className="flex justify-center p-4 bg-transparent">
+        <img src={logo} alt="Logo" className="w-80 h-auto" />
+      </header>
+
       {/* Formulario de Registro */}
-      <div className="bg-green-600 bg-opacity-75 p-8 rounded-lg shadow-lg w-full max-w-md mx-auto mt-12 sm:mt-20">
+      <div className="bg-green-700 bg-opacity-50 p-8 rounded-lg shadow-lg w-full max-w-md mx-auto mt-4 sm:mt-10">
         <h2 className="text-white text-3xl sm:text-4xl mb-6 text-center">Registrarse</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="form-group">
@@ -72,8 +73,6 @@ function Signup() {
           </button>
         </form>
       </div>
-
-      {/* <Footer /> */}
     </div>
   );
 }
