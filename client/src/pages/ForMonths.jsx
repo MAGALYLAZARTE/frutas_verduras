@@ -1,8 +1,8 @@
-// src/pages/ForMonths.jsx
-
 import React from 'react';
+import { Link } from 'react-router-dom'; 
 import logo from '../assets/logo.png';  
 import fondo2 from '../assets/fondo2.png';  
+import Frutas from '../assets/frutas.png';
 
 function ForMonths() {
   return (
@@ -10,9 +10,11 @@ function ForMonths() {
       className="bg-cover bg-center h-screen flex flex-col justify-between"
       style={{ backgroundImage: `url(${fondo2})` }}  
     >
-          {/* Logo */}
-      <header className="flex justify-center p-4 bg-transparent">
-        <img src={logo} alt="Logo" className="w-80 h-auto" />
+      <header className="flex flex-col items-center p-4 bg-transparent">
+        <Link to="/" className="cursor-pointer"> 
+          <img src={logo} alt="Logo" className="w-80 h-auto mb-4" />
+        </Link>
+        <img src={Frutas} alt="Frutas" className="w-100 h-auto" />
       </header>
 
       <div className="flex-grow flex items-center justify-center">
@@ -25,3 +27,5 @@ function ForMonths() {
 }
 
 export default ForMonths;
+
+
