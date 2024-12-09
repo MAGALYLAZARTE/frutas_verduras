@@ -10,10 +10,7 @@ const UsersModel = conectionDB.define<UserModel>('users', {
         primaryKey: true,
         autoIncrement: true
     },
-    rol: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
+
     name: {
         type: DataTypes.STRING,
         allowNull: false

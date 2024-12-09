@@ -5,11 +5,18 @@ import { Sequelize } from 'sequelize';
 import conectionDB from './database/conectionDB';
 import UsersModel from './models/usersModel';
 import FrutasyverdurasModel from './models/frutasyverduras';
+import { router } from './routes/userRoutes';
+import { loginRouter } from './routes/userRoutes';
+
 
 export const app = express();
 
+
 app.use(cors());
 app.use(express.json());
+
+app.use("api/users", router);
+app.use("/api/login", loginRouter);
 
 const iniciaDatabase = async (sequelize: Sequelize) => {
     try {
