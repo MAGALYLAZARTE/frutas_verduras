@@ -39,14 +39,6 @@ cd server
 npm install
 
 
-Aquí tienes el README.md actualizado con tu nombre de usuario:
-
-markdown
-Copiar código
-# 🍎 Proyecto de Temporada - Frutas y Verduras 🥦
-
-Este proyecto es una aplicación web desarrollada con React que ayuda a los usuarios a conocer qué frutas y verduras están de temporada en cada mes. La aplicación permite navegar a través de distintos meses y ver información relacionada con el consumo de productos locales y de temporada. Además, incluye funcionalidades para la autenticación de usuarios y promueve una alimentación consciente y responsable.
-
 ## 🚀 Características Principales
 
 - **📅 Navegación por Meses**: Los usuarios pueden seleccionar un mes del año y conocer qué frutas y verduras están en temporada.
@@ -67,60 +59,17 @@ Este proyecto es una aplicación web desarrollada con React que ayuda a los usua
 
 Sigue estos pasos para clonar e instalar este proyecto en tu máquina local.
 
-### 1. Clonar el Repositorio
+ 1. Clonar el Repositorio
 
 Primero, clona el repositorio en tu máquina local:
 
 ```bash
 git clone https://github.com/MAGALYLAZARTE/frutas-y-verduras.git
 cd frutas-y-verduras
+
 2. Instalar Dependencias
 Instala las dependencias necesarias para el frontend y el backend:
 
-Frontend (React)
-bash
-Copiar código
-cd client
-npm install
-Backend (Node.js y Express)
-bash
-Copiar código
-cd server
-npm install
-3. Configurar Variables de Entorno
-Crea un archivo .env en la raíz del proyecto y configura las variables necesarias para el backend. Por ejemplo:
-
-bash
-Copiar código
-# Variables para la base de datos
-DB_HOST=localhost
-DB_USER=usuario
-DB_PASSWORD=contraseña
-DB_NAME=nombre_de_base_de_datos
-
-# Puerto del servidor
-PORT=5000
-4. Ejecutar el Proyecto
-Iniciar el Backend
-Navega a la carpeta server y ejecuta el siguiente comando:
-
-bash
-Copiar código
-cd server
-npm start
-El servidor backend estará disponible en http://localhost:5000.
-
-Iniciar el Frontend
-Navega a la carpeta client y ejecuta el siguiente comando:
-
-bash
-Copiar código
-cd client
-npm start
-El frontend estará disponible en http://localhost:3000.
-
-5. Ver la Aplicación
-Abre tu navegador y visita http://localhost:3000 para interactuar con la aplicación.
 
 🧑‍💻 Estructura del Proyecto:
 
