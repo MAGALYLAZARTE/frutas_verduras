@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';  // Importa Link de React Router
 import fondo2 from '../assets/fondo2.png';
 import logo from '../assets/logo.png'; 
 
@@ -17,9 +18,11 @@ function Signup() {
       className="bg-cover bg-center h-screen flex flex-col items-center justify-start" 
       style={{ backgroundImage: `url(${fondo2})` }}
     >
-      {/* Logo */}
+      {/* Logo - Envolvemos la imagen con Link */}
       <header className="flex justify-center p-4 bg-transparent">
-        <img src={logo} alt="Logo" className="w-80 h-auto" />
+        <Link to="/" className="cursor-pointer">
+          <img src={logo} alt="Logo" className="w-80 h-auto" />
+        </Link>
       </header>
 
       {/* Formulario de Registro */}

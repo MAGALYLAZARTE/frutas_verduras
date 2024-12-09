@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Importar useNavigate
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -7,6 +8,7 @@ const Login = () => {
   });
 
   const [errors, setErrors] = useState({});
+  const navigate = useNavigate(); // Hook para navegación
 
   const handleChange = (e) => {
     setFormData({
@@ -41,6 +43,10 @@ const Login = () => {
         password: "",
       });
     }
+  };
+
+  const handleSignupRedirect = () => {
+    navigate("/signup"); // Redirigir a la ruta de Signup
   };
 
   return (
@@ -103,9 +109,12 @@ const Login = () => {
         {/* Enlace de registro */}
         <p className="mt-4 text-center text-green-700 text-lg">
           ¿Eres nuevo aquí?{" "}
-          <a href="#" className="underline">
+          <span
+            className="underline cursor-pointer"
+            onClick={handleSignupRedirect}
+          >
             Regístrate
-          </a>
+          </span>
         </p>
       </div>
     </div>
