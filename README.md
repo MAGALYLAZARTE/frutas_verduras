@@ -12,7 +12,7 @@ Frutas y Verduras facilita a los usuarios comprender la importancia de consumir 
 🎨 Diseño Responsivo: Adaptable a diferentes tamaños de pantalla (móvil, tablet y desktop).
 🔍 Búsqueda de Productos**: Filtra frutas y verduras según los meses del año y muestra qué productos están disponibles en cada estación.
 
- 🛠️ Tecnologías Utilizadas:
+ 🛠️ Tecnologías Utilizadas
 
 - **Frontend**: React, Tailwind CSS
 - **Ruteo**: React Router DOM
@@ -38,22 +38,6 @@ npm install
 cd server
 npm install
 
-
-## 🚀 Características Principales
-
-- **📅 Navegación por Meses**: Los usuarios pueden seleccionar un mes del año y conocer qué frutas y verduras están en temporada.
-- **🔒 Autenticación de Usuarios**: Los usuarios pueden registrarse, iniciar sesión y acceder a contenido personalizado.
-- **🌱 Información Educativa**: La aplicación ofrece información sobre la importancia de consumir productos locales y de temporada, ayudando a reducir el impacto ambiental.
-- **🎨 Diseño Responsivo**: La aplicación se adapta a diferentes tamaños de pantalla, garantizando una experiencia de usuario óptima en dispositivos móviles, tabletas y escritorios.
-- **🔍 Búsqueda de Productos**: Filtra frutas y verduras según los meses del año y muestra qué productos están disponibles en cada estación.
-
-## 🛠️ Tecnologías Utilizadas
-
-- **Frontend**: React, Tailwind CSS
-- **Ruteo**: React Router DOM
-- **Backend**: Node.js, Express
-- **Base de datos**: MySQL con Sequelize ORM
-- **Autenticación**: JSON Web Tokens (JWT) para manejar sesiones de usuario
 
 ## 📦 Instalación y Configuración
 
