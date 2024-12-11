@@ -1,16 +1,45 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';  // Importa Link de React Router
+import { Link, useNavigate } from 'react-router-dom';  
+import axios from 'axios';  
 import fondo2 from '../assets/fondo2.png';
-import logo from '../assets/logo.png'; 
+import logo from '../assets/logo.png';
 
 function Signup() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');  
+  const [success, setSuccess] = useState('');  
 
-  const handleSubmit = (e) => {
+  const navigate = useNavigate(); 
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Registrando usuario:', { name, email, password });
+
+ 
+    setError('');
+    setSuccess('');
+
+    try {
+     
+      const response = await axios.post('http://localhost:3000/api/users', {
+        name,
+        email,
+        password,
+      });
+
+      // Si la respuesta es exitosa
+      setSuccess('Usuario registrado con éxito!');
+      console.log('Respuesta del servidor:', response.data);
+
+      // Redirigimos a la página de "months" después del registro exitoso
+      navigate('/months');  
+
+    } catch (err) {
+      // Si ocurre un error
+      setError('Hubo un error al registrar el usuario.');
+      console.error('Error de registro:', err);
+    }
   };
 
   return (
@@ -28,6 +57,11 @@ function Signup() {
       {/* Formulario de Registro */}
       <div className="bg-green-700 bg-opacity-50 p-8 rounded-lg shadow-lg w-full max-w-md mx-auto mt-4 sm:mt-10">
         <h2 className="text-white text-3xl sm:text-4xl mb-6 text-center">Registrarse</h2>
+        
+        {/* Mostrar mensaje de éxito o error */}
+        {success && <div className="text-green-500 text-center mb-4">{success}</div>}
+        {error && <div className="text-red-500 text-center mb-4">{error}</div>}
+
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="form-group">
             <label htmlFor="name" className="text-white">Nombre</label>

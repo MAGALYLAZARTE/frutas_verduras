@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Importar useNavigate
+import { useNavigate } from "react-router-dom";
+import axios from "axios"; // Importar Axios
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -8,7 +9,8 @@ const Login = () => {
   });
 
   const [errors, setErrors] = useState({});
-  const navigate = useNavigate(); // Hook para navegación
+  const [serverError, setServerError] = useState(null); // Para manejar errores del servidor
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({
@@ -30,23 +32,39 @@ const Login = () => {
     return newErrors;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const validationErrors = validate();
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
     } else {
-      console.log(formData);
-      setErrors({});
-      setFormData({
-        email: "",
-        password: "",
-      });
+      try {
+        setErrors({});
+        setServerError(null);
+
+        // Realizar la solicitud de login con Axios
+        const response = await axios.post("http://localhost:3000/api/login", {
+          email: formData.email,
+          password: formData.password,
+        });
+
+        console.log("Respuesta del servidor:", response.data);
+
+        // Redirigir a /months después del login exitoso
+        navigate("/months");
+      } catch (error) {
+        console.error("Error al iniciar sesión:", error);
+        if (error.response) {
+          setServerError(error.response.data.error || "Error en el servidor");
+        } else {
+          setServerError("Error de red. Inténtalo de nuevo.");
+        }
+      }
     }
   };
 
   const handleSignupRedirect = () => {
-    navigate("/signup"); // Redirigir a la ruta de Signup
+    navigate("/signup");
   };
 
   return (
@@ -96,6 +114,13 @@ const Login = () => {
               <span className="text-red-500 text-sm">{errors.password}</span>
             )}
           </div>
+
+          {/* Mostrar error del servidor */}
+          {serverError && (
+            <div className="text-red-500 text-sm text-center">
+              {serverError}
+            </div>
+          )}
 
           {/* Botón de enviar */}
           <button
