@@ -15,18 +15,19 @@ export const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use('api/users', router);
+app.use('/api/users', router);
 app.use('/api/login', loginRouter);
+// app.use('/api/frutasyverduras', frutasyverdurasRouter);
 
 const iniciaDatabase = async (sequelize: Sequelize) => {
     try {
         await sequelize.authenticate();
         console.log('Conexión con la base de datos establecida.');
 
-        await UsersModel.sync({force: true});
+        await UsersModel.sync({force: false});
         console.log('Tablas creadas.');
 
-        await FrutasyverdurasModel.sync({force: true});
+        await FrutasyverdurasModel.sync({force: false});
         console.log('Tablas creadas.');
 
     } catch (error) {

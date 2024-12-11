@@ -29,21 +29,26 @@ export const createUser = async (req: Request, res: Response): Promise<any> => {
       return res.status(500).json({ error: 'Error al crear el usuario.' });
     }
   };
-export const loginUser = async (req: Request, res: Response) => {
+  export const loginUser = async (req: Request, res: Response) => {
     try {
-        const { email, password } = req.body;
-        const user = await UsersModel.findOne({ where: { email, password } });
-        if (!user) {
-            return res.status(401).json({ error: 'No se encontró el usuario o la contraseña no es correcta.' });
-        }
-       
-        res.status(200).json({
-            message: 'Usuario autenticado correctamente.',
-            id: user.id,
-            nameUser: user.name,  
-        });
-
+      const { email, password } = req.body;
+  
+      // Buscar el usuario por su email y contraseña (sin encriptar)
+      const user = await UsersModel.findOne({ where: { email, password } });
+      
+      // Si no se encuentra el usuario o la contraseña no es correcta
+      if (!user) {
+        return res.status(401).json({ error: "Correo o contraseña incorrecta." });
+      }
+  
+      // Si todo es correcto, devolver los datos del usuario
+      res.status(200).json({
+        message: "Usuario autenticado correctamente.",
+        id: user.id,
+        nameUser: user.name,
+      });
     } catch (error) {
-        res.status(500).json({ error: 'Error al autenticar el usuario.' });
+      console.error("Error en el servidor:", error);
+      res.status(500).json({ error: "Error al autenticar el usuario." });
     }
-}
+  };
