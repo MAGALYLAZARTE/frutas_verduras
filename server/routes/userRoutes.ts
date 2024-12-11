@@ -8,4 +8,4 @@ export const router = Router();
 export const loginRouter = Router();
 
 router.post('/', createUser);
-router.post('/', loginRouter);
+loginRouter.post('/', loginRouter);

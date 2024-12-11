@@ -15,8 +15,8 @@ export const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use("api/users", router);
-app.use("/api/login", loginRouter);
+app.use('api/users', router);
+app.use('/api/login', loginRouter);
 
 const iniciaDatabase = async (sequelize: Sequelize) => {
     try {

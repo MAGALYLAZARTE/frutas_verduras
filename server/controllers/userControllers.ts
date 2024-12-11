@@ -2,6 +2,8 @@ import { Request, Response, RequestHandler } from 'express';
 import UsersModel from '../models/usersModel';
 import { UserInterface } from '../interfaces/userInterface';
 
+
+
 export const getUsers = async (req: Request, res: Response) => {
     try {
         const users = await UsersModel.findAll();
@@ -11,24 +13,20 @@ export const getUsers = async (req: Request, res: Response) => {
     }
 }
 
-export const createUser = async (req: Request, res: Response) => {
+export const createUser = async (req: Request, res: Response): Promise<any> => {
     try {
-      // Extraer los campos directamente del body
       const { id, name, email, password } = req.body;
   
-      // Validar que los campos necesarios estén presentes
       if (!name || !email || !password) {
         return res.status(400).json({ error: 'Faltan campos requeridos: name, email o password.' });
       }
   
-      // Crear el usuario en la base de datos
-      const newUser = await UsersModel.create({ id,name, email, password });
+      const newUser = await UsersModel.create({ id, name, email, password });
   
-      // Devolver el usuario creado con un código 201 (Created)
-      res.status(201).json(newUser);
+      return res.status(201).json(newUser);
     } catch (error) {
-      console.error(error); // Loguear el error para depuración
-      res.status(500).json({ error: 'Error al crear el usuario.' });
+      console.error(error);
+      return res.status(500).json({ error: 'Error al crear el usuario.' });
     }
   };
 export const loginUser = async (req: Request, res: Response) => {
