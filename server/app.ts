@@ -5,7 +5,7 @@ import { Sequelize } from 'sequelize';
 import conectionDB from './database/conectionDB';
 import UsersModel from './models/usersModel';
 import FrutasyverdurasModel from './models/frutasyverduras';
-import { router } from './routes/userRoutes';
+import { frutasyverdurasRouter, router } from './routes/userRoutes';
 import { loginRouter } from './routes/userRoutes';
 
 
@@ -17,7 +17,9 @@ app.use(express.json());
 
 app.use('/api/users', router);
 app.use('/api/login', loginRouter);
-// app.use('/api/frutasyverduras', frutasyverdurasRouter);
+
+app.use('/api/frutasyverduras', frutasyverdurasRouter);
+
 
 const iniciaDatabase = async (sequelize: Sequelize) => {
     try {
