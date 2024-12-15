@@ -27,7 +27,6 @@ export const routes = createBrowserRouter([
         path: "month/:month",
         element: <ForMonths />,
       },
-
     ],
   },
 ]);

@@ -1,7 +1,7 @@
 import React from 'react';
 import Home from './pages/home';
 import Signup from './pages/signup';
-import Footer from './components/Footer';  
+import Footer from './components/Footer';  // Importa el Footer
 
 function App() {
   return (
@@ -14,4 +14,3 @@ function App() {
 }
 
 export default App;
-

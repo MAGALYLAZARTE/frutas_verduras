@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import axios from "axios"; // Importar Axios
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -53,7 +53,7 @@ const Login = () => {
         // Redirigir a /months después del login exitoso
         navigate("/months");
       } catch (error) {
-        // console.error("Error del servidor :", error);
+        console.error("Error al iniciar sesión:", error);
         if (error.response) {
           setServerError(error.response.data.error || "Error en el servidor");
         } else {

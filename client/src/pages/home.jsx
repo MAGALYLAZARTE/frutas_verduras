@@ -47,14 +47,14 @@ function Home() {
         <section className="flex justify-center mt-10">
           <button
             className="px-6 py-3 bg-orange-500 text-white font-semibold rounded-full shadow-md hover:bg-orange-200 transition duration-300"
-            onClick={scrollToLogin} // Asignar la función al click del botón
+            onClick={scrollToLogin} 
           >
             Iniciar sesión
           </button>
         </section>
       </section>
 
-      {/* Componente Login con la referencia */}
+    
       <div ref={loginRef}>
         <Login />
       </div>
@@ -63,4 +63,3 @@ function Home() {
 }
 
 export default Home;
-
