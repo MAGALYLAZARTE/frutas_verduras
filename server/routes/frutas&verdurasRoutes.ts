@@ -1,10 +1,8 @@
 import { Router } from 'express';
+import { getFrutasYVerdurasByMes } from '../controllers/frutas&verdurasControllers';
 
+const frutasYVerdurasRoutes = Router();
 
+frutasYVerdurasRoutes.get('/:mes', getFrutasYVerdurasByMes);
 
-export const frutasyverdurasRouter = Router();
-
-frutasyverdurasRouter.get('/', (req, res) => {
-    res.send('Hola mundo');
-});
-
+export default frutasYVerdurasRoutes;

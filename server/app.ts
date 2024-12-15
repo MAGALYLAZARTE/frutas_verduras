@@ -4,9 +4,10 @@ import { PORT } from './config';
 import { Sequelize } from 'sequelize'; 
 import conectionDB from './database/conectionDB';
 import UsersModel from './models/usersModel';
-import FrutasyverdurasModel from './models/frutasyverduras';
-import { frutasyverdurasRouter, router } from './routes/userRoutes';
+import frutasYVerdurasRoutes from './routes/frutas&verdurasRoutes';
+import { router } from './routes/userRoutes';
 import { loginRouter } from './routes/userRoutes';
+import FrutasyverdurasModel from './models/frutasyverduras';
 
 
 export const app = express();
@@ -17,9 +18,7 @@ app.use(express.json());
 
 app.use('/api/users', router);
 app.use('/api/login', loginRouter);
-
-app.use('/api/frutasyverduras', frutasyverdurasRouter);
-
+app.use('/api/frutas-y-verduras', frutasYVerdurasRoutes);
 
 const iniciaDatabase = async (sequelize: Sequelize) => {
     try {

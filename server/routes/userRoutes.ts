@@ -6,10 +6,6 @@ import { getUsers, createUser, loginUser } from '../controllers/userControllers'
 
 export const router = Router();
 export const loginRouter = Router();
-export const frutasyverdurasRouter = Router();
-
-
 
 router.post('/', createUser);
 loginRouter.post('/', loginRouter);
-

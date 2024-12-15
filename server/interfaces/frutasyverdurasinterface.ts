@@ -5,4 +5,3 @@ export interface FrutasyverdurasInterface {
     frutas_op: string;
     verduras_op: string;
 }
-

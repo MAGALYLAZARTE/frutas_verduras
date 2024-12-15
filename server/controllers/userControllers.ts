@@ -33,13 +33,15 @@ export const createUser = async (req: Request, res: Response): Promise<any> => {
     try {
       const { email, password } = req.body;
   
-    
+      // Buscar el usuario por su email y contraseña (sin encriptar)
       const user = await UsersModel.findOne({ where: { email, password } });
       
+      // Si no se encuentra el usuario o la contraseña no es correcta
       if (!user) {
         return res.status(401).json({ error: "Correo o contraseña incorrecta." });
       }
   
+      // Si todo es correcto, devolver los datos del usuario
       res.status(200).json({
         message: "Usuario autenticado correctamente.",
         id: user.id,
