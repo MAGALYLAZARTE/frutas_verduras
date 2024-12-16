@@ -6,7 +6,7 @@ import fondo2 from '../assets/fondo2.png';
 import Frutas from '../assets/frutas.png';
 
 function ForMonths() {
-  const { month } = useParams(); // Obtener el parámetro del mes desde la URL
+  const { month } = useParams(); 
   const [data, setData] = useState(null);
   const [error, setError] = useState('');
 
@@ -25,7 +25,7 @@ function ForMonths() {
 
   return (
     <div
-      className="bg-cover bg-center h-screen flex flex-col justify-between"
+      className="bg-cover bg-center min-h-screen flex flex-col justify-between" 
       style={{ backgroundImage: `url(${fondo2})` }}
     >
       <header className="flex flex-col items-center p-4 bg-transparent">
@@ -39,7 +39,7 @@ function ForMonths() {
         {error ? (
           <h2 className="text-red-500 text-xl">{error}</h2>
         ) : data ? (
-          <div className="bg-white p-6 rounded-lg shadow-md">
+          <div className="bg-white p-6 rounded-lg shadow-md mb-12 w-full max-w-3xl"> 
             <h2 className="text-green-700 text-2xl font-semibold mb-4 capitalize">
               Frutas y Verduras de {month}
             </h2>
@@ -62,6 +62,11 @@ function ForMonths() {
           <h2 className="text-white text-xl">Cargando...</h2>
         )}
       </div>
+
+
+      <footer className="mt-10 mb-7 text-center text-white">
+        © 2024 Frutas y Verduras
+      </footer>
     </div>
   );
 }
